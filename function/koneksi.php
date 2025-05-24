@@ -209,5 +209,17 @@ function tambah_koleksi($user_id, $buku_id){
     mysqli_query($koneksi, $query);
     return mysqli_affected_rows($koneksi);
 }
-
+function hapus_kategori($id_hapus){
+    global $koneksi;
+    mysqli_query($koneksi, "DELETE FROM kategoribuku_relasi WHERE KategoriID = $id_hapus");
+    mysqli_query($koneksi, "DELETE FROM kategoribuku WHERE KategoriID = $id_hapus");
+    return mysqli_affected_rows($koneksi);
+}
+function tambah_kategori($data_post){
+    global $koneksi;
+    $nama_kategori = htmlspecialchars($data_post["nama"]);
+    $query = "INSERT INTO kategoribuku VALUES ('','$nama_kategori')";
+    mysqli_query($koneksi, $query);
+    return mysqli_affected_rows($koneksi);
+}
 ?> 
