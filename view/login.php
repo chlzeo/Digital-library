@@ -13,7 +13,7 @@ if(isset($_POST["submit"])){
             $_SESSION["login"] = true;
             $_SESSION["UserID"] = $row['UserID'];
             if($row['role'] === 'admin' || $row['role'] === 'petugas'){
-            header("location: /perpustakaan/view/index.php");
+            header("location: index.php");
             }elseif($row["role"] === "peminjam"){
                 header("Location: buku.php");
             }

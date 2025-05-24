@@ -74,7 +74,7 @@ $peminjam_name = isset($_SESSION['name']) ? $_SESSION['name'] : 'Guest';
                         <div class="text-xs text-gray-600 mb-2 w-36 truncate"><?= htmlspecialchars($b['Penulis']); ?></div>
                     </div>
                     <div class="flex gap-2 w-36">
-                        <a href="pinjam.php?id_buku=<?= $b['BukuID']; ?>" class="flex-1 bg-gradient-to-r from-blue-700 to-blue-400 text-white px-2 py-1 rounded-lg hover:from-blue-800 hover:to-blue-500 text-center font-semibold transition shadow text-xs flex items-center justify-center gap-1">
+                        <a href="detail_buku.php?id_buku=<?= $b['BukuID']; ?>" class="flex-1 bg-gradient-to-r from-blue-700 to-blue-400 text-white px-2 py-1 rounded-lg hover:from-blue-800 hover:to-blue-500 text-center font-semibold transition shadow text-xs flex items-center justify-center gap-1">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4"/></svg>
                             Pinjam
                         </a>
@@ -88,7 +88,7 @@ $peminjam_name = isset($_SESSION['name']) ? $_SESSION['name'] : 'Guest';
         </div>
         <?php else: ?>
             <div class="flex flex-col items-center mt-20">
-                <img src="https://cdn-icons-png.flaticon.com/512/4076/4076549.png" alt="Empty" class="w-32 h-32 mb-4 opacity-60">
+                <img src="https://i.pinimg.com/736x/f1/bb/21/f1bb2115bcd93930f57aaf82c773747e.jpg" alt="Empty" class="w-32 h-32 mb-4 opacity-60">
                 <p class="text-gray-600 text-lg text-center">Belum ada buku favorit.<br>Tambahkan buku ke favorit dari halaman katalog.</p>
             </div>
         <?php endif; ?>

@@ -21,12 +21,12 @@ $buku = read("SELECT * FROM buku");
     <nav class="bg-white shadow-lg py-4 px-0 mb-6">
         <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <img src="/perpustakaan/view/img/ppp.jpg" alt="Logo" class="w-10 h-10">
+                <img src="https://cdn-icons-png.flaticon.com/512/29/29302.png" alt="Logo" class="w-10 h-10">
                 <span class="text-2xl font-bold text-blue-700 tracking-wide">Perpustakaan</span>
             </div>
             <div class="space-x-4 flex items-center">
                 <a href="index.php" class="hover:text-blue-700 transition font-medium">User</a>
-                <a href="peminjaman.php" class="hover:text-blue-700 transition font-medium">Peminjaman</a>
+                <a href="admin_pengembalian.php" class="hover:text-blue-700 transition font-medium">Peminjaman</a>
                 <a href="admin_buku.php" class="text-blue-700 font-bold underline">Buku</a>
                 <a href="logout.php" class="bg-red-500 px-4 py-2 rounded-lg hover:bg-red-600 text-white font-semibold shadow transition">Logout</a>
             </div>
