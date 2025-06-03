@@ -58,6 +58,7 @@ if (isset($_POST["submit"])){
             </div>
             <button type="submit" name="submit" class="w-full bg-[#232366] text-white py-2 rounded-lg font-semibold hover:bg-[#4343a3] transition">Kirim</button>
         </form>
+        <a href="admin_buku.php" class="block mt-4 text-center bg-gray-300 text-[#232366] font-semibold py-2 rounded-lg hover:bg-gray-400 transition">Kembali</a>
     </div>
 </body>
 </html>

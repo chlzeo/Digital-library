@@ -22,7 +22,7 @@ $user = read("SELECT * FROM user");
         <div class="flex items-center gap-3">
             <img src="https://cdn-icons-png.flaticon.com/512/29/29302.png" alt="Logo" class="w-10 h-10">
             <span class="text-2xl font-bold text-blue-700 tracking-wide">Perpustakaan</span>
-        </div>
+        </div>  
         <div class="space-x-4 flex items-center">
              <a href="kategori.php" class="hover:text-blue-700 transition font-medium">Kategori</a>
             <a href="index.php" class="text-blue-700 font-bold underline">User</a>

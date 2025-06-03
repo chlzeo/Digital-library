@@ -87,7 +87,7 @@ if(isset($_POST['delete_ulasan'])) {
                 <li><a href="koleksi.php" class="text-[#232366] hover:underline">Koleksi</a></li>
             </ul>
         </div>
-        <a href="/perpustakaan/view/logout.php" class="bg-red-500 hover:bg-red-600 text-white px-5 py-2 rounded-lg font-semibold transition">
+        <a href="logout.php" class="bg-red-500 hover:bg-red-600 text-white px-5 py-2 rounded-lg font-semibold transition">
             Logout
         </a>
     </nav>

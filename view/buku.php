@@ -29,7 +29,7 @@ if(isset($_POST['submit'])){
     <!-- Navbar -->
     <nav class="bg-white shadow-lg px-8 py-4 flex items-center justify-between sticky top-0 z-30">
         <div class="flex items-center gap-3">
-            <img src="/perpustakaan/view/img/anjai.svg" alt="Logo" class="w-10 h-10">
+            <img src="https://cdn-icons-png.flaticon.com/512/29/29302.png" alt="Logo" class="w-10 h-10">
         </div>
         <!-- Hamburger button for mobile -->
         <div class="md:hidden">

@@ -222,4 +222,11 @@ function tambah_kategori($data_post){
     mysqli_query($koneksi, $query);
     return mysqli_affected_rows($koneksi);
 }
+function kembalikan($id){
+    global $koneksi;
+    $tanggal_kembali = date('Y-m-d');
+    $query_update = "UPDATE peminjaman SET StatusPeminjaman = 'selesai', TanggalPengembalian = '$tanggal_kembali' WHERE PeminjamanID = $id";
+    mysqli_query($koneksi, $query_update);
+    return mysqli_affected_rows($koneksi);
+}
 ?> 

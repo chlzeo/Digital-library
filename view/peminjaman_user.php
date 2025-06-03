@@ -22,7 +22,7 @@ $peminjaman = read("SELECT p.*, b.Judul, b.Foto
     <!-- Navbar -->
     <nav class="bg-white shadow-lg px-8 py-4 flex items-center justify-between sticky top-0 z-30">
         <div class="flex items-center gap-3">
-            <img src="/perpustakaan/view/img/anjai.svg" alt="Logo" class="w-10 h-10">
+            <img src="https://cdn-icons-png.flaticon.com/512/29/29302.png" alt="Logo" class="w-10 h-10">
         </div>
         <div class="md:hidden"></div>
         <div id="menu" class="flex-1 flex-col md:flex md:flex-row md:justify-center md:items-center gap-8 items-center text-lg font-medium absolute md:static top-20 left-0 w-full md:w-auto bg-white md:bg-transparent z-20 hidden md:flex">
