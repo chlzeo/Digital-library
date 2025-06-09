@@ -31,6 +31,7 @@ $kategori = read("SELECT * FROM kategoribuku");
                 <span class="text-2xl font-bold text-blue-700 tracking-wide">Perpustakaan</span>
             </div>
             <div class="space-x-4 flex items-center">
+                <a href="home_admin.php" class="hover:text-blue-700 transition font-medium">Home</a>
                  <a href="kategori.php" class="text-blue-700 font-bold underline">Kategori</a>
                 <a href="index.php" class="hover:text-blue-700 transition font-medium">User</a>
                 <a href="admin_pengembalian.php" class="hover:text-blue-700 transition font-medium">Peminjaman</a>

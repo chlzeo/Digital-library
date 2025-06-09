@@ -32,7 +32,7 @@ $peminjaman = read("SELECT p.*, b.Judul, b.Foto
                 <li><a href="koleksi.php" class="text-[#232366] hover:underline transition">koleksi</a></li>
             </ul>
         </div>
-        <a href="/perpustakaan/view/logout.php" class="bg-red-500 hover:bg-red-600 text-white px-5 py-2 rounded-lg font-semibold transition hidden md:block shadow">
+        <a href="logout.php" class="bg-red-500 hover:bg-red-600 text-white px-5 py-2 rounded-lg font-semibold transition hidden md:block shadow">
             Logout
         </a>
     </nav>
@@ -66,7 +66,7 @@ $peminjaman = read("SELECT p.*, b.Judul, b.Foto
                             <td class="py-2 px-4"><?= htmlspecialchars($row['TanggalPengembalian']) ?></td>
                             <td class="py-2 px-4">
                                 <?php
-                                    if ($row['StatusPeminjaman'] == 'kembali') {
+                                    if ($row['StatusPeminjaman'] == 'selesai') {
                                         echo '<span class="text-green-600 font-semibold">Selesai</span>';
                                     } else {
                                         echo '<span class="text-yellow-600 font-semibold">Dipinjam</span>';

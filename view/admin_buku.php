@@ -6,6 +6,11 @@ if(!isset($_SESSION["login"])){
     exit;
 }
 $buku = read("SELECT * FROM buku");
+
+// Tambahan: Query untuk total user, kategori, dan peminjaman
+$total_user = count(read("SELECT * FROM user"));
+$total_kategori = count(read("SELECT * FROM kategoribuku"));
+$total_peminjaman = count(read("SELECT * FROM peminjaman"));
 ?>
 
 <!DOCTYPE html>
@@ -25,6 +30,7 @@ $buku = read("SELECT * FROM buku");
                 <span class="text-2xl font-bold text-blue-700 tracking-wide">Perpustakaan</span>
             </div>
             <div class="space-x-4 flex items-center">
+                <a href="home_admin.php" class="hover:text-blue-700 transition font-medium">Home</a>
                  <a href="kategori.php" class="hover:text-blue-700 transition font-medium">Kategori</a>
                 <a href="index.php" class="hover:text-blue-700 transition font-medium">User</a>
                 <a href="admin_pengembalian.php" class="hover:text-blue-700 transition font-medium">Peminjaman</a>
@@ -43,7 +49,8 @@ $buku = read("SELECT * FROM buku");
             <a href="tambah_buku.php" class="bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600 font-semibold shadow transition">+ Tambah Buku</a>
         </div>
         <!-- Card Jumlah Buku -->
-        <div class="flex justify-center mb-8">
+        <div class="flex flex-col md:flex-row justify-center gap-6 mb-8">
+            <!-- Card Total Buku -->
             <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center w-full max-w-xs">
                 <div class="bg-blue-100 rounded-full p-3 mb-2">
                     <svg class="h-8 w-8 text-blue-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -54,6 +61,45 @@ $buku = read("SELECT * FROM buku");
                     <?php echo count($buku) ?? "data buku kosong" ?>
                 </div>
                 <div class="text-gray-500">Total Buku</div>
+            </div>
+            <!-- Card Total User -->
+            <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center w-full max-w-xs">
+                <div class="bg-green-100 rounded-full p-3 mb-2">
+                    <svg class="h-8 w-8 text-green-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5V4a2 2 0 00-2-2H4a2 2 0 00-2 2v16h5"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                        <path d="M6 20v-2a4 4 0 014-4h0a4 4 0 014 4v2"></path>
+                    </svg>
+                </div>
+                <div class="text-2xl font-bold text-gray-800">
+                    <?php echo $total_user; ?>
+                </div>
+                <div class="text-gray-500">Total User</div>
+            </div>
+            <!-- Card Total Kategori -->
+            <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center w-full max-w-xs">
+                <div class="bg-yellow-100 rounded-full p-3 mb-2">
+                    <svg class="h-8 w-8 text-yellow-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+                        <path d="M9 9h6v6H9z"></path>
+                    </svg>
+                </div>
+                <div class="text-2xl font-bold text-gray-800">
+                    <?php echo $total_kategori; ?>
+                </div>
+                <div class="text-gray-500">Total Kategori</div>
+            </div>
+            <!-- Card Total Peminjaman -->
+            <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center w-full max-w-xs">
+                <div class="bg-red-100 rounded-full p-3 mb-2">
+                    <svg class="h-8 w-8 text-red-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8 17l4 4 4-4m0-5V3a1 1 0 00-1-1H7a1 1 0 00-1 1v9"></path>
+                    </svg>
+                </div>
+                <div class="text-2xl font-bold text-gray-800">
+                    <?php echo $total_peminjaman; ?>
+                </div>
+                <div class="text-gray-500">Total Peminjaman</div>
             </div>
         </div>
         <div class="overflow-x-auto rounded-lg shadow-lg bg-white">

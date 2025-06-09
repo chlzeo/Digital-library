@@ -16,6 +16,9 @@ $favorit = read("
     WHERE koleksipribadi.UserID = $user_id
 
 ");
+if(isset($_POST['submit'])){
+    $favorit = cari($_POST['key']);
+}
 
 $peminjam_name = isset($_SESSION['name']) ? $_SESSION['name'] : 'Guest';
 ?>
@@ -44,7 +47,7 @@ $peminjam_name = isset($_SESSION['name']) ? $_SESSION['name'] : 'Guest';
                 <li><a href="koleksi.php" class="text-[#232366] hover:underline transition">koleksi</a></li>
             </ul>
         </div>
-        <a href="/perpustakaan/view/logout.php" class="bg-red-500 hover:bg-red-600 text-white px-5 py-2 rounded-lg font-semibold transition hidden md:block shadow">
+        <a href="logout.php" class="bg-red-500 hover:bg-red-600 text-white px-5 py-2 rounded-lg font-semibold transition hidden md:block shadow">
             Logout
         </a>
     </nav>
@@ -54,7 +57,12 @@ $peminjam_name = isset($_SESSION['name']) ? $_SESSION['name'] : 'Guest';
         <div class="mt-12 mb-8 text-center">
             <h1 class="text-6xl font-extrabold text-[#232366] mb-6 tracking-wide drop-shadow">Koleksi Saya</h1>
             <!-- Search bar -->
-        
+        <form action="" method="POST" class="flex items-center w-full gap-2">
+                    <input type="text" placeholder="Search books" name="key" class="flex-1 bg-transparent outline-none text-lg text-gray-700 placeholder-gray-500 px-2 py-1 rounded focus:bg-white focus:ring-2 focus:ring-[#232366] transition">
+                    <button type="submit" name="submit" class="bg-[#232366] hover:bg-[#4343a3] text-white px-4 py-2 rounded-lg font-semibold transition shadow">
+                        Search 
+                    </button>
+                </form>
         </div>
         <?php if (count($favorit) > 0): ?>
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-12 gap-y-10 w-full justify-items-center">
@@ -78,10 +86,10 @@ $peminjam_name = isset($_SESSION['name']) ? $_SESSION['name'] : 'Guest';
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4"/></svg>
                             Pinjam
                         </a>
-                        <a href="hapus_koleksi.php?id=<?= $b['KoleksiID']; ?>" onclick="return confirm('Yakin ingin menghapus?');" class="flex-1 bg-gradient-to-r from-red-100 to-red-200 text-red-700 px-2 py-1 rounded-lg hover:from-red-200 hover:to-red-300 text-center font-semibold transition shadow border border-red-200 flex items-center justify-center gap-1 text-xs">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg>
-                            Hapus
-                        </a>
+                       <a href="hapus_koleksi.php?id=<?= $b['KoleksiID']; ?>" onclick="return confirm('Yakin ingin menghapus?');" class="flex-1 bg-gradient-to-r from-red-100 to-red-200 text-red-700 px-2 py-1 rounded-lg hover:from-red-200 hover:to-red-300 text-center font-semibold transition shadow border border-red-200 flex items-center justify-center gap-1 text-xs">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg>
+                        Hapus
+</a>
                     </div>
                 </div>
             <?php endforeach; ?>
