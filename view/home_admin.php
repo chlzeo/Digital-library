@@ -1,12 +1,17 @@
 <?php
 include_once '../function/koneksi.php';
 session_start();
+if(!isset($_SESSION["login"])){
+    header("Location: login.php");
+    exit;
+}
 // Dummy data untuk demo, ganti dengan query database sesuai kebutuhan
 $totalUser = count(read("SELECT * FROM user"));
 // $totalUser = 100; // Contoh jumlah user, ganti dengan query database
 $totalPeminjaman = count(read("SELECT * FROM peminjaman"));
 $totalKategori = count(read("SELECT * FROM kategoribuku"));
 $totalBuku = count (read("SELECT * FROM buku"));
+$role = isset($_SESSION['role']) ? $_SESSION['role'] : 'guest'; // Role user, bisa admin, petugas, atau guest
 ?>
 
 <!DOCTYPE html>
@@ -38,7 +43,11 @@ $totalBuku = count (read("SELECT * FROM buku"));
 <!-- Header Dashboard -->
 <div class="container mx-auto mb-8">
     <div class="text-center mt-8 mb-4">
+        <?php if($role == 'admin'): ?>
         <h1 class="text-3xl md:text-4xl font-extrabold text-blue-700 mb-2">Admin Dashboard</h1>
+        <?php else: ?>
+        <h1 class="text-3xl md:text-4xl font-extrabold text-blue-700 mb-2">petugas Dashboard</h1>
+        <?php endif; ?>
         <p class="text-gray-600 text-lg">Selamat datang di halaman admin. Kelola data perpustakaan dengan mudah dan cepat.</p>
     </div>
     <!-- Statistik -->

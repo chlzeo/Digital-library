@@ -148,11 +148,14 @@ function tambah_ulasan($data_post){
     return mysqli_affected_rows($koneksi);
 }
 function cari ($keyword){
-    $query = "SELECT buku.*, kategoribuku.NamaKategori 
+$query =  "SELECT buku.*, kategoribuku.NamaKategori 
     FROM buku
     LEFT JOIN kategoribuku_relasi ON buku.BukuID = kategoribuku_relasi.BukuID
     LEFT JOIN kategoribuku ON kategoribuku_relasi.KategoriID = kategoribuku.KategoriID
-    WHERE Judul LIKE '%$keyword%' OR Penulis LIKE '%$keyword%' OR Penerbit LIKE '%$keyword%'";
+    WHERE buku.Judul LIKE '%$keyword%'
+    OR buku.Penulis LIKE '%$keyword%'
+    OR buku.Penerbit LIKE '%$keyword%'
+    OR kategoribuku.NamaKategori LIKE '%$keyword%'";
     return read($query);
 }
 function hapus($id){
