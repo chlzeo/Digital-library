@@ -42,6 +42,20 @@ $buku = read("SELECT * FROM buku");
             </div>
             <a href="tambah_buku.php" class="bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600 font-semibold shadow transition">+ Tambah Buku</a>
         </div>
+        <!-- Card Jumlah Buku -->
+        <div class="flex justify-center mb-8">
+            <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center w-full max-w-xs">
+                <div class="bg-blue-100 rounded-full p-3 mb-2">
+                    <svg class="h-8 w-8 text-blue-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 20h9M17 20V4a2 2 0 00-2-2H7a2 2 0 00-2 2v16"></path>
+                    </svg>
+                </div>
+                <div class="text-2xl font-bold text-gray-800">
+                    <?php echo count($buku) ?? "data buku kosong" ?>
+                </div>
+                <div class="text-gray-500">Total Buku</div>
+            </div>
+        </div>
         <div class="overflow-x-auto rounded-lg shadow-lg bg-white">
             <table class="min-w-full divide-y divide-gray-200">
                 <thead class="bg-blue-100">

@@ -52,7 +52,8 @@ function edit_user($post_data){
     $nama = htmlspecialchars($post_data['nama']);
     $email = htmlspecialchars($post_data['email']);
     $alamat = htmlspecialchars($post_data['alamat']);
-    $query_update = "UPDATE user SET NamaLengkap = '$nama', Email = '$email', Alamat = '$alamat' WHERE UserID = $id";
+    $role = htmlspecialchars($post_data['role']);
+    $query_update = "UPDATE user SET NamaLengkap = '$nama', Email = '$email', Alamat = '$alamat', role = '$role' WHERE UserID = $id";
     mysqli_query($koneksi, $query_update);
     return mysqli_affected_rows($koneksi);
 }

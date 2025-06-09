@@ -37,7 +37,7 @@ if(isset($_POST['submit'])){
         </div>
         <div id="menu" class="flex-1 flex-col md:flex md:flex-row md:justify-center md:items-center gap-8 items-center text-lg font-medium absolute md:static top-20 left-0 w-full md:w-auto bg-white md:bg-transparent z-20 hidden md:flex">
             <ul class="flex flex-col md:flex-row gap-8 items-center w-full md:w-auto">
-                <li><a href="buku.php" class="text-[#232366] hover:underline transition">Home</a></li>
+                <li><a href="buku.php" class="text-[#232366] hover:underline transition">Buku</a></li>
                 <li><a href="peminjaman_user.php" class="text-[#232366] hover:underline transition">Peminjaman</a></li>
                 <li><a href="koleksi.php" class="text-[#232366] hover:underline transition">koleksi</a></li>
             </ul>
@@ -66,10 +66,6 @@ if(isset($_POST['submit'])){
                         Search 
                     </button>
                 </form>
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-gray-500 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
-                    <line x1="21" y1="21" x2="16.65" y2="16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                </svg>
             </div>
         </div>
     </div>
